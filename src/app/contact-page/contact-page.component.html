@@ -1,3 +1,19 @@
 <section class="page">
-  <h2>Contact</h2>
+  <a routerLink="/listings"><button class="btn mb-3">Back</button></a>
+  <h2>Send the owner a message:</h2>
+  <div>
+    <label for="name">
+      Your email address:<br>
+      <input name="email" [(ngModel)]="email" />
+    </label>
+  </div>
+  <div class="mt-1">
+    <label for="message">
+      Your message:<br>
+      <textarea name="message" rows="5" cols="20" [(ngModel)]="message"></textarea>
+    </label>
+  </div>
+  <div>
+    <button class="btn mt-1" (click)="sendMessage()">Send</button>
+  </div>
 </section>
