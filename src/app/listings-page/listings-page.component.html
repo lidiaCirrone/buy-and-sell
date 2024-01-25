@@ -1,8 +1,8 @@
-<section class="page">
+<app-container>
   <h2>Listings</h2>
   <div class="content-box" *ngFor="let listing of listings">
     <a routerLink="/listings/{{listing.id}}">
       <h3>{{listing.name}} - ${{listing.price}}</h3>
     </a>
   </div>
-</section>
+</app-container>

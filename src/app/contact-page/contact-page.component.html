@@ -1,5 +1,4 @@
-<section class="page">
-  <a routerLink="/listings"><button class="btn mb-3">Back</button></a>
+<app-container [showBack]="true">
   <h2>Send the owner a message:</h2>
   <div>
     <label for="name">
@@ -16,4 +15,4 @@
   <div>
     <button class="btn mt-1" (click)="sendMessage()">Send</button>
   </div>
-</section>
+</app-container>
