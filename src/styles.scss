@@ -65,21 +65,12 @@ p {
 }
 
 body {
-  // font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
 }
 
 button {
-  background-color: black;
-  border: none;
-  border-radius: 8px;
-  color: white;
   cursor: pointer;
-  outline: none;
-  padding: 16px;
-  font-family: Arial, sans-serif;
-  font-size: 16px;
 }
 
 input,
@@ -95,10 +86,6 @@ a {
   text-decoration: none;
   color: black;
 }
-
-// div {
-//   padding: 8px;
-// }
 
 #page-wrap {
   background-color: #eee;
@@ -158,21 +145,59 @@ a {
   margin-left: 8px;
 }
 
-// @media screen and (max-width: 650px) {
 section.page {
   margin: 0 auto 1rem;
-  // max-width: 700px;
-  // min-height: 100vh;
   padding: 16px;
   display: flex;
   flex-direction: column;
   max-width: 350px;
-  // width: max-content;
 }
-// }
 
-@media screen and (max-width: 650px) {
-  section.page {
-    // width: max-content;
+
+.btn {
+  display: flex;
+  align-items: center;
+  --btn-accent: var(--gray-700);
+  background: color-mix(in srgb, var(--btn-accent) 15%, transparent);
+  color: var(--btn-accent);
+  padding-inline: 0.75em;
+  padding-block: 0.375em;
+  border-radius: 0.5em;
+  border: 0;
+  transition: background 0.3s ease;
+  font-family: var(--inter-font);
+  font-size: 0.875em;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1.4em;
+  letter-spacing: -0.00875em;
+  text-decoration: none;
+
+  &:hover {
+    background: color-mix(in srgb, var(--btn-accent) 25%, transparent);
+  }
+}
+
+// utilities
+
+@each $weight in 500, 700, 900 {
+  .font-#{$weight} {
+    font-weight: $weight;
+  }
+}
+
+@for $size from 1 to 5 {
+  .m-#{$size} {
+    margin: 1em * $size;
+  }
+  .mt-#{$size} {
+    margin-top: 1em * $size;
+  }
+  .mb-#{$size} {
+    margin-bottom: 1em * $size;
+  }
+  .my-#{$size} {
+    margin-top: 1em * $size;
+    margin-bottom: 1em * $size;
   }
 }

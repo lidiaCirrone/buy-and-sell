@@ -1,1 +1,9 @@
-<p>listing-detail-page works!</p>
+<section class="page">
+  <a routerLink="/listings"><button class="btn mb-3">Back</button></a>
+  <h2>Listing detail: <span class="font-700">{{listing?.name}}</span></h2>
+  <p>{{listing?.description}}</p>
+  <p>${{listing?.price}}</p>
+  <a routerLink="/contact/{{listing?.id}}">
+    <button class="btn mt-1">Contact Seller</button>
+  </a>
+</section>
