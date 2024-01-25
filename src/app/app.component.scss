@@ -31,7 +31,7 @@ main {
 
 .divider {
   width: 1px;
-  background: var(--red-to-violet-to-purple-to-green-vertical-gradient);
+  background: var(--red-to-green-to-blue-vertical-gradient);
   margin-inline: 0.5rem;
 }
 
@@ -79,10 +79,6 @@ main {
   --pill-accent: var(--bright-blue);
 }
 
-.pill-group .pill:nth-child(6n + 4) {
-  --pill-accent: var(--french-violet);
-}
-
 .pill-group svg {
   margin-inline-start: 0.25rem;
 }
@@ -96,7 +92,7 @@ main {
   .divider {
     height: 1px;
     width: 100%;
-    background: var(--red-to-violet-to-purple-to-green-horizontal-gradient);
+    background: var(--red-to-green-to-blue-horizontal-gradient);
     margin-block: 1.5rem;
   }
 }
