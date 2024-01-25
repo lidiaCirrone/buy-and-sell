@@ -1,3 +1,5 @@
 <app-container [showBack]="true" backPath="/my-listings">
   <h2>Edit Listing #</h2>
+  <app-listing-data-form [currentName]="listing?.name || ''" [currentDescription]="listing?.description || ''" [currentPrice]="listing?.price?.toString() || ''"
+    (onSubmit)="onSubmit()"></app-listing-data-form>
 </app-container>

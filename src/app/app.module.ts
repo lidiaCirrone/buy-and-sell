@@ -11,6 +11,7 @@ import { NewListingPageComponent } from './new-listing-page/new-listing-page.com
 import { EditListingPageComponent } from './edit-listing-page/edit-listing-page.component';
 import { FormsModule } from '@angular/forms';
 import { ContainerComponent } from './shared/container/container.component';
+import { ListingDataFormComponent } from './listing-data-form/listing-data-form.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { ContainerComponent } from './shared/container/container.component';
     NewListingPageComponent,
     EditListingPageComponent,
     ContainerComponent,
+    ListingDataFormComponent,
   ],
   imports: [
     BrowserModule,
