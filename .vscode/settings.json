@@ -1,0 +1,5 @@
+{
+  "html.autoCreateQuotes": true,
+   "editor.autoClosingQuotes": "languageDefined",
+   "deepscan.enable": true
+}
