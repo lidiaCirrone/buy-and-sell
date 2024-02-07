@@ -14,7 +14,8 @@
     "@babel/runtime": "^7.23.9",
     "@hapi/boom": "^10.0.1",
     "@hapi/hapi": "^21.3.2",
-    "mysql": "^2.18.1"
+    "mysql": "^2.18.1",
+    "uuid": "^9.0.1"
   },
   "devDependencies": {
     "@babel/core": "^7.23.9",
