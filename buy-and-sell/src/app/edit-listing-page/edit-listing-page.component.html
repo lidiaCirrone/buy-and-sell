@@ -1,9 +1,14 @@
 <app-container [showBack]="true" backPath="/my-listings">
-  <h2>Edit Listing #</h2>
-  <app-listing-data-form 
-    [currentName]="listing?.name || ''" 
-    [currentDescription]="listing?.description || ''" 
-    [currentPrice]="listing?.price?.toString() || ''"
-    (onSubmit)="onSubmit()"
+  <div *ngIf="listing">
+    <h2>Edit Listing #</h2>
+    <app-listing-data-form
+      [currentName]="listing.name || ''"
+      [currentDescription]="listing.description || ''"
+      [currentPrice]="listing.price.toString() || ''"
+      (onSubmit)="onSubmit($event)"
     ></app-listing-data-form>
+  </div>
+  <div *ngIf="!listing">
+    <h3>Loading...</h3>
+  </div>
 </app-container>
