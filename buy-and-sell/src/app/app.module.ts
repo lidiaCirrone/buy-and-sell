@@ -13,6 +13,7 @@ import { FormsModule } from '@angular/forms';
 import { ContainerComponent } from './shared/container/container.component';
 import { ListingDataFormComponent } from './listing-data-form/listing-data-form.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -27,12 +28,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     ListingDataFormComponent,
     NavbarComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
