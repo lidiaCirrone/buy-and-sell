@@ -15,7 +15,7 @@ import {
 export class NavbarComponent {
   appName = 'Buy And Sell';
 
-  constructor(public auth: Auth) {}
+  constructor(private auth: Auth) {}
   user$ = user(this.auth);
 
   signInClicked(): void {

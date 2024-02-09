@@ -7,6 +7,6 @@ import { Auth, user } from '@angular/fire/auth';
   styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  constructor(public auth: Auth) {}
+  constructor(private auth: Auth) {}
   user$ = user(this.auth);
 }
