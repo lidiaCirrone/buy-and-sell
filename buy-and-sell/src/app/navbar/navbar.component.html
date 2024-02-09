@@ -5,7 +5,7 @@
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>
     <div class="right-side">
-      <div class="pill-group">
+      <div class="pill-group" *ngIf="user$ | async">
         @for (item of [
         { title: 'Listings', link: '/listings' },
         { title: 'My Listings', link: '/my-listings' },
@@ -15,6 +15,14 @@
           <span>{{ item.title }}</span>
         </a>
         }
+        <a class="pill default" (click)="signOutClicked()">
+           <span>Sign Out</span>
+         </a>
+      </div>
+      <div class="pill-group" *ngIf="!(user$ | async)">
+         <a class="pill default" (click)="signInClicked()">
+            <span>Sign In</span>
+          </a>
       </div>
     </div>
     <div class="divider" role="separator" aria-label="Divider"></div>

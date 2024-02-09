@@ -61,6 +61,7 @@ main {
   line-height: 1.4rem;
   letter-spacing: -0.00875rem;
   text-decoration: none;
+  cursor: pointer;
 }
 
 .pill:hover {
@@ -77,6 +78,10 @@ main {
 
 .pill-group .pill:nth-child(6n + 3) {
   --pill-accent: var(--bright-blue);
+}
+
+.pill-group .pill.default {
+  --pill-accent: var(--gray-900);
 }
 
 .pill-group svg {
