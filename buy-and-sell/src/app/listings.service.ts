@@ -93,10 +93,19 @@ export class ListingsService {
     description: string,
     price: number
   ): Observable<Listing> {
-    return this.http.post<Listing>(
-      `/api/listings/${id}`,
-      { name, description, price },
-      httpOptions
-    );
+    return new Observable<Listing>((observer) => {
+      this.user$.subscribe((user) => {
+        user &&
+          user.getIdToken().then((token) => {
+            return this.http
+              .post<Listing>(
+                `/api/listings/${id}`,
+                { name, description, price },
+                httpOptionsWithAuthToken(token)
+              )
+              .subscribe(() => observer.next());
+          });
+      });
+    });
   }
 }
