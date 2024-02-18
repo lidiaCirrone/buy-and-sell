@@ -24,12 +24,7 @@ admin.initializeApp({
 
 const server = Hapi.server({
    port: 3000,
-   host: "0.0.0.0", // needed for Render deployment  
-   "routes": {
-      "cors": {
-         "origin": ["polyglotwannabe.com"],
-      }
-   }
+   host: "0.0.0.0" // needed for Render deployment
 });
 
 routes.forEach(route => server.route(route))
