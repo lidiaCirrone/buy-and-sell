@@ -7,5 +7,5 @@ import { Component, Input } from '@angular/core';
 })
 export class ContainerComponent {
   @Input() showBack: boolean = false;
-  @Input() backPath: string = '/listings/';
+  @Input() backPath: string = '/listings';
 }
