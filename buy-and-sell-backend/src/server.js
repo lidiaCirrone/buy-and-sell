@@ -5,6 +5,7 @@ import * as admin from 'firebase-admin';
 import routes from './routes';
 import { db } from './database';
 
+
 admin.initializeApp({
    credential: admin.credential.cert({
       type: process.env.FIREBASE_type,
