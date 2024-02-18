@@ -22,15 +22,27 @@ admin.initializeApp({
    })
 });
 
-let server;
+const server = Hapi.server({
+   port: 3000,
+   host: "0.0.0.0" // needed for Render deployment
+});
+
+routes.forEach(route => server.route(route))
 
 const start = async () => {
-   server = Hapi.server({
-      port: 8000,
-      host: 'localhost'
-   });
 
-   routes.forEach(route => server.route(route))
+   await server.register([
+      {
+         plugin: require("@hapi/inert"),
+         options: {}
+      },
+      {
+         plugin: require("hapi-pino"),
+         options: {
+            prettyPrint: true,
+            logEvents: ["response", "onPostStart"]
+         }
+      }]);
 
    db.connect();
    await server.start();
