@@ -27,7 +27,7 @@ let server;
 const start = async () => {
    server = Hapi.server({
       port: 8000,
-      host: 'https://buy-and-sell-amber.vercel.app/'
+      host: 'localhost'
    });
 
    routes.forEach(route => server.route(route))
