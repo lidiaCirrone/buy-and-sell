@@ -2,7 +2,7 @@ const mysql = require('mysql2');
 
 let connection;
 
-export const db = {
+const db = {
    connect: () => {
       connection = mysql.createConnection(process.env.DB_URL)
       connection.connect();
@@ -16,3 +16,4 @@ export const db = {
       }),
    end: () => connection.end()
 }
+module.exports = { db };
