@@ -11,8 +11,8 @@ export const db = {
          password: process.env.DB_PASS,
          database: process.env.DB_NAME,
          ssl: {
-            // ca: process.env.DB_SSL_CA,
-            ca : fs.readFileSync(__dirname + process.env.DB_SSL_CA)
+            ca: process.env.DB_SSL_CA,
+            // ca : fs.readFileSync(__dirname + process.env.DB_SSL_CA)
          }
       })
       connection.connect();
