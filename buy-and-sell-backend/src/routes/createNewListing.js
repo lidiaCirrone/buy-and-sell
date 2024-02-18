@@ -2,7 +2,7 @@ const { v4: uuid } = require('uuid');
 const admin = require('firebase-admin');
 const { db } = require('../database.js');
 
-export const createNewListingRoute = {
+const createNewListingRoute = {
    method: 'POST',
    path: '/api/listings',
    handler: async (req, h) => {
@@ -24,3 +24,5 @@ export const createNewListingRoute = {
       return { id, name, description, price, user_id: userId, views };
    }
 }
+
+module.exports = { createNewListingRoute };

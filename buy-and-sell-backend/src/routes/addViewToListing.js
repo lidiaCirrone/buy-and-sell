@@ -1,6 +1,6 @@
 const { db } = require('../database.js');
 
-export const addViewToListingRoute = {
+const addViewToListingRoute = {
    method: 'POST',
    path: '/api/listings/{id}/add-view',
    handler: async (req, h) => {
@@ -17,3 +17,5 @@ export const addViewToListingRoute = {
       return updatedListing;
    }
 }
+
+module.exports = { addViewToListingRoute };

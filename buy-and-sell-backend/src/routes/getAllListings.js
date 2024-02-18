@@ -1,6 +1,6 @@
 const { db } = require('../database.js');
 
-export const getAllListingsRoute = {
+const getAllListingsRoute = {
    method: 'GET',
    path: '/api/listings',
    handler: async (req, h) => {
@@ -10,3 +10,5 @@ export const getAllListingsRoute = {
       return results;
    }
 }
+
+module.exports = { getAllListingsRoute };

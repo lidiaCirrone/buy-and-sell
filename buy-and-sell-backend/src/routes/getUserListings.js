@@ -1,7 +1,7 @@
 const admin = require('firebase-admin');
 const { db } = require('../database.js');
 
-export const getUserListingsRoute = {
+const getUserListingsRoute = {
    method: 'GET',
    path: '/api/users/{userId}/listings',
    handler: async (req, h) => {
@@ -16,3 +16,5 @@ export const getUserListingsRoute = {
       return results;
    }
 }
+
+module.exports = { getUserListingsRoute };

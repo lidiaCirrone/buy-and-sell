@@ -1,7 +1,7 @@
 const Boom = require('@hapi/boom');
 const { db } = require('../database.js');
 
-export const getListingRoute = {
+const getListingRoute = {
    method: 'GET',
    path: '/api/listings/{id}',
    handler: async (req, h) => {
@@ -15,3 +15,5 @@ export const getListingRoute = {
       return listing;
    }
 }
+
+module.exports = { getListingRoute };

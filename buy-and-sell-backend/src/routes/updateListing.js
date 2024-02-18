@@ -1,7 +1,7 @@
 const admin = require('firebase-admin');
 const { db } = require('../database.js');
 
-export const updateListingRoute = {
+const updateListingRoute = {
    method: 'POST',
    path: '/api/listings/{id}',
    handler: async (req, h) => {
@@ -22,3 +22,5 @@ export const updateListingRoute = {
       return results[0];
    }
 }
+
+module.exports = { updateListingRoute };

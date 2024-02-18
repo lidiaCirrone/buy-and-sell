@@ -1,7 +1,7 @@
 const admin = require('firebase-admin');
 const { db } = require('../database.js');
 
-export const deleteListingRoute = {
+const deleteListingRoute = {
    method: 'DELETE',
    path: '/api/listings/{id}',
    handler: async (req, h) => {
@@ -16,3 +16,5 @@ export const deleteListingRoute = {
       return { message: 'Success!' }
    }
 }
+
+module.exports = { deleteListingRoute };
