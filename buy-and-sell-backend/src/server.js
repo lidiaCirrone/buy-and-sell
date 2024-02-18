@@ -27,8 +27,9 @@ const server = Hapi.server({
    host: "0.0.0.0", // needed for Render deployment  
    routes: {
       cors: {
-         origin: '*',
-         
+         origin: ["*"],
+         headers: ["Accept", "Content-Type"],
+         additionalHeaders: ["X-Requested-With"]
       }
    }
 });
