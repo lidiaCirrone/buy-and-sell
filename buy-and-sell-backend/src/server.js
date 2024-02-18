@@ -22,6 +22,14 @@ admin.initializeApp({
    })
 });
 
+// const server = Hapi.server({
+//    port: 3000,
+//    host: "0.0.0.0", // needed for Render deployment  
+//    routes: {
+//       cors: true
+//    }
+// });
+
 const server = Hapi.server({
    port: 3000,
    host: "0.0.0.0", // needed for Render deployment  
@@ -51,6 +59,19 @@ const start = async () => {
       }]);
 
    db.connect();
+
+   server.route({
+      method: 'OPTIONS',
+      path: '/{any*}',
+      handler: async (request, reply) => {
+         console.log(`======options: ${request.route.path}`)
+         const response = reply.response({})
+         response.header('Access-Control-Allow-Origin', '*')
+         response.header('Access-Control-Allow-Headers', '*')
+         return response;
+      }
+   })
+
    await server.start();
    console.log(`server is listening on ${server.info.uri}`)
 }
