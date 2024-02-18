@@ -6,7 +6,6 @@ const createNewListingRoute = {
    method: 'POST',
    path: '/api/listings',
    handler: async (req, h) => {
-      h.set('Access-Control-Allow-Origin', 'polyglotwannabe.com');
       const token = req.headers.authtoken;
       const user = await admin.auth().verifyIdToken(token);
       const userId = user.user_id;

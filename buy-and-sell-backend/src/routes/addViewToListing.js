@@ -4,7 +4,6 @@ const addViewToListingRoute = {
    method: 'POST',
    path: '/api/listings/{id}/add-view',
    handler: async (req, h) => {
-      h.set('Access-Control-Allow-Origin', 'polyglotwannabe.com');
       const id = req.params.id;
       await db.query(
          'UPDATE listings SET views=views+1 WHERE id=?',

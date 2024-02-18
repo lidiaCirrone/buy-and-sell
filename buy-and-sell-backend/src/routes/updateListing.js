@@ -5,7 +5,6 @@ const updateListingRoute = {
    method: 'POST',
    path: '/api/listings/{id}',
    handler: async (req, h) => {
-      h.set('Access-Control-Allow-Origin', 'polyglotwannabe.com');
       const { id } = req.params;
       const { name, description, price } = req.payload;
       const token = req.headers.authtoken;
