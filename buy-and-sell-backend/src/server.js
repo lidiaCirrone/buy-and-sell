@@ -26,7 +26,10 @@ const server = Hapi.server({
    port: 3000,
    host: "0.0.0.0", // needed for Render deployment  
    routes: {
-      cors: true
+      cors: {
+         origin: '*',
+         
+      }
    }
 });
 
