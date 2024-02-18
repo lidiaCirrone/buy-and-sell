@@ -33,11 +33,11 @@ const start = async () => {
 
    await server.register([
       {
-         plugin: require("@hapi/inert"),
+         plugin: import("@hapi/inert"),
          options: {}
       },
       {
-         plugin: require("hapi-pino"),
+         plugin: import("hapi-pino"),
          options: {
             prettyPrint: true,
             logEvents: ["response", "onPostStart"]
