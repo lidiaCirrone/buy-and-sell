@@ -1,8 +1,8 @@
 const dotenv = require('dotenv');
 dotenv.config();
-require('@hapi/hapi');
+const Hapi = require('@hapi/hapi');
 const admin = require('firebase-admin');
-require('./routes/index.js');
+const routes = require('./routes/index.js');
 const { db } = require('./database.js');
 
 
