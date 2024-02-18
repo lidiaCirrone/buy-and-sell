@@ -1,4 +1,4 @@
-import { db } from '../database.js'
+const { db } = require('../database.js');
 
 export const addViewToListingRoute = {
    method: 'POST',

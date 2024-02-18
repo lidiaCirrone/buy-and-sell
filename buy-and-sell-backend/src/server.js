@@ -1,9 +1,9 @@
-import dotenv from 'dotenv';
+require('dotenv');
 dotenv.config();
-import Hapi from '@hapi/hapi';
-import admin from 'firebase-admin';
-import routes from './routes/index.js';
-import { db } from './database.js';
+require('@hapi/hapi');
+const admin = require('firebase-admin');
+require('./routes/index.js');
+const { db } = require('./database.js');
 
 
 admin.initializeApp({

@@ -1,5 +1,5 @@
-import Boom from '@hapi/boom'
-import { db } from '../database.js';
+const Boom = require('@hapi/boom');
+const { db } = require('../database.js');
 
 export const getListingRoute = {
    method: 'GET',

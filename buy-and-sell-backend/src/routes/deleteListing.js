@@ -1,5 +1,5 @@
-import * as admin from 'firebase-admin';
-import { db } from '../database.js'
+const admin = require('firebase-admin');
+const { db } = require('../database.js');
 
 export const deleteListingRoute = {
    method: 'DELETE',

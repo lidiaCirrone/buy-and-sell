@@ -1,10 +1,10 @@
-import { addViewToListingRoute } from "./addViewToListing.js";
-import { createNewListingRoute } from "./createNewListing.js";
-import { deleteListingRoute } from "./deleteListing.js";
-import { getAllListingsRoute } from "./getAllListings.js";
-import { getListingRoute } from "./getListing.js";
-import { getUserListingsRoute } from "./getUserListings.js";
-import { updateListingRoute } from "./updateListing.js";
+const { addViewToListingRoute } = require("./addViewToListing.js");
+const { createNewListingRoute } = require("./createNewListing.js");
+const { deleteListingRoute } = require("./deleteListing.js");
+const { getAllListingsRoute } = require("./getAllListings.js");
+const { getListingRoute } = require("./getListing.js");
+const { getUserListingsRoute } = require("./getUserListings.js");
+const { updateListingRoute } = require("./updateListing.js");
 
 export default [
    addViewToListingRoute,

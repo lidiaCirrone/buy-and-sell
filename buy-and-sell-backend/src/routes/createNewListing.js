@@ -1,6 +1,6 @@
-import { v4 as uuid } from 'uuid'
-import * as admin from 'firebase-admin';
-import { db } from '../database.js'
+const { v4: uuid } = require('uuid');
+const admin = require('firebase-admin');
+const { db } = require('../database.js');
 
 export const createNewListingRoute = {
    method: 'POST',
