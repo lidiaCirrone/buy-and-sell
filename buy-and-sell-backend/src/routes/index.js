@@ -6,7 +6,7 @@ const { getListingRoute } = require("./getListing.js");
 const { getUserListingsRoute } = require("./getUserListings.js");
 const { updateListingRoute } = require("./updateListing.js");
 
-export default [
+module.exports = [
    addViewToListingRoute,
    createNewListingRoute,
    deleteListingRoute,
