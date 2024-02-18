@@ -5,6 +5,7 @@ const getUserListingsRoute = {
    method: 'GET',
    path: '/api/users/{userId}/listings',
    handler: async (req, h) => {
+      h.set('Access-Control-Allow-Origin', 'polyglotwannabe.com');
       const token = req.headers.authtoken;
       const user = await admin.auth().verifyIdToken(token);
       const userId = req.params.userId;

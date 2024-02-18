@@ -5,6 +5,7 @@ const deleteListingRoute = {
    method: 'DELETE',
    path: '/api/listings/{id}',
    handler: async (req, h) => {
+      h.set('Access-Control-Allow-Origin', 'polyglotwannabe.com');
       const { id } = req.params;
       const token = req.headers.authtoken;
       const user = await admin.auth().verifyIdToken(token);
