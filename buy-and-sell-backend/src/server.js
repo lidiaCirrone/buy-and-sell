@@ -1,4 +1,4 @@
-require('dotenv');
+const dotenv = require('dotenv');
 dotenv.config();
 require('@hapi/hapi');
 const admin = require('firebase-admin');
