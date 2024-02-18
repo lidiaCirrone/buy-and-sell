@@ -1,7 +1,7 @@
 import dotenv from 'dotenv';
 dotenv.config();
 import Hapi from '@hapi/hapi';
-import * as admin from 'firebase-admin';
+import admin from 'firebase-admin';
 import routes from './routes/index.js';
 import { db } from './database.js';
 
