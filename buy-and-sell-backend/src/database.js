@@ -4,12 +4,7 @@ let connection;
 
 export const db = {
    connect: () => {
-      connection = mysql.createConnection({
-         host: process.env.DB_HOST,
-         user: process.env.DB_USER,
-         password: process.env.DB_PASS,
-         database: process.env.DB_NAME
-      })
+      connection = mysql.createConnection(process.env.DB_URL)
       connection.connect();
    },
    query: (queryString, escapedValues) =>
