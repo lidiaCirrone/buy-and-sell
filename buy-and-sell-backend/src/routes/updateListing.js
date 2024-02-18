@@ -1,5 +1,5 @@
 import * as admin from 'firebase-admin';
-import { db } from '../database'
+import { db } from '../database.js'
 
 export const updateListingRoute = {
    method: 'POST',
