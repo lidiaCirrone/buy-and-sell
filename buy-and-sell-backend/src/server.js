@@ -39,7 +39,6 @@ const start = async () => {
       {
          plugin: require("hapi-pino"),
          options: {
-            prettyPrint: true,
             logEvents: ["response", "onPostStart"]
          }
       }]);
