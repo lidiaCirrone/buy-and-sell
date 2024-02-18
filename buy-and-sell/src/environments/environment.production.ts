@@ -1,5 +1,5 @@
 export const environment = {
-  apiBaseURL: '',
+  apiBaseURL: 'https://buy-and-sell-vxyu.onrender.com',
   production: false,
   firebase: {
     apiKey: 'AIzaSyA2Sw3NEcqhWy0aiAQWzDL2e95RNIxt7oc',

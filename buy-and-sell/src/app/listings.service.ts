@@ -3,6 +3,7 @@ import { Listing } from './types';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Auth, user } from '@angular/fire/auth';
+import { environment } from '../environments/environment';
 
 const httpOptions = {
   headers: new HttpHeaders({
@@ -25,16 +26,18 @@ export class ListingsService {
   user$ = user(this.auth);
 
   getListings(): Observable<Listing[]> {
-    return this.http.get<Listing[]>('/api/listings');
+    return this.http.get<Listing[]>(`${environment.apiBaseURL}/api/listings`);
   }
 
   getListingById(id: string): Observable<Listing> {
-    return this.http.get<Listing>(`/api/listings/${id}`);
+    return this.http.get<Listing>(
+      `${environment.apiBaseURL}/api/listings/${id}`
+    );
   }
 
   addViewToListing(id: string): Observable<Listing> {
     return this.http.post<Listing>(
-      `/api/listings/${id}/add-view`,
+      `${environment.apiBaseURL}/api/listings/${id}/add-view`,
       {},
       httpOptions
     );
@@ -48,7 +51,7 @@ export class ListingsService {
             if (user && token) {
               this.http
                 .get<Listing[]>(
-                  `/api/users/${user.uid}/listings`,
+                  `${environment.apiBaseURL}/api/users/${user.uid}/listings`,
                   httpOptionsWithAuthToken(token)
                 )
                 .subscribe((listings) => {
@@ -68,7 +71,10 @@ export class ListingsService {
         user &&
           user.getIdToken().then((token) => {
             this.http
-              .delete(`/api/listings/${id}`, httpOptionsWithAuthToken(token))
+              .delete(
+                `${environment.apiBaseURL}/api/listings/${id}`,
+                httpOptionsWithAuthToken(token)
+              )
               .subscribe(() => observer.next());
           });
       });
@@ -86,7 +92,7 @@ export class ListingsService {
           user.getIdToken().then((token) => {
             this.http
               .post<Listing>(
-                '/api/listings',
+                `${environment.apiBaseURL}/api/listings`,
                 { name, description, price },
                 httpOptionsWithAuthToken(token)
               )
@@ -108,7 +114,7 @@ export class ListingsService {
           user.getIdToken().then((token) => {
             return this.http
               .post<Listing>(
-                `/api/listings/${id}`,
+                `${environment.apiBaseURL}/api/listings/${id}`,
                 { name, description, price },
                 httpOptionsWithAuthToken(token)
               )
