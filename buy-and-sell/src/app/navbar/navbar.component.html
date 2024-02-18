@@ -3,28 +3,40 @@
     <div class="left-side">
       <h1>{{ appName }} 💸</h1>
     </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
+    <div
+      *ngIf="user$ | async"
+      class="divider"
+      role="separator"
+      aria-label="Divider"
+    ></div>
     <div class="right-side">
       <div class="pill-group" *ngIf="user$ | async">
-        @for (item of [
-        { title: 'Listings', link: '/listings' },
-        { title: 'My Listings', link: '/my-listings' },
-        { title: 'New Listing', link: '/new-listing' },
-        ]; track item.title) {
+        @for (item of [ { title: 'Listings', link: '/listings' }, { title: 'My
+        Listings', link: '/my-listings' }, { title: 'New Listing', link:
+        '/new-listing' }, ]; track item.title) {
         <a class="pill" [routerLink]="item.link">
           <span>{{ item.title }}</span>
         </a>
         }
         <a class="pill default" (click)="signOutClicked()">
-           <span>Sign Out</span>
-         </a>
+          <span>Sign Out</span>
+        </a>
       </div>
-      <div class="pill-group" *ngIf="!(user$ | async)">
-         <a class="pill default" (click)="signInClicked()">
+      <div *ngIf="!(user$ | async)">
+        <h2 class="mt-2">Hmm...</h2>
+        <p class="mb-1">Seems like you're not logged in yet :(</p>
+        <div class="pill-group">
+          <a class="pill default" (click)="signInClicked()">
             <span>Sign In</span>
           </a>
+        </div>
       </div>
     </div>
-    <div class="divider" role="separator" aria-label="Divider"></div>
+    <div
+      *ngIf="user$ | async"
+      class="divider"
+      role="separator"
+      aria-label="Divider"
+    ></div>
   </div>
 </main>
