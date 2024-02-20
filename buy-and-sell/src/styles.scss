@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap");
 
 :root {
   --bright-green: oklch(0.57 0.21 144.78);
@@ -63,6 +63,12 @@ p {
 body {
   margin: 0;
   padding: 0;
+}
+
+button,
+input,
+textarea {
+  font-family: inherit;
 }
 
 button {
