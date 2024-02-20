@@ -8,13 +8,15 @@ import { ListingsService } from '../listings.service';
   styleUrl: './listings-page.component.scss',
 })
 export class ListingsPageComponent implements OnInit {
+  isLoading: boolean = true;
   listings: Listing[] = [];
 
   constructor(private listingsService: ListingsService) {}
 
   ngOnInit(): void {
-    this.listingsService
-      .getListings()
-      .subscribe((listings) => (this.listings = listings));
+    this.listingsService.getListings().subscribe((listings) => {
+      this.listings = listings;
+      this.isLoading = false;
+    });
   }
 }

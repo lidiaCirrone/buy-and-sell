@@ -1,8 +1,11 @@
 <app-container>
   <h2>Listings</h2>
   <div class="content-box" *ngFor="let listing of listings">
-    <a routerLink="/listings/{{listing.id}}">
-      <h3>{{listing.name}} - ${{listing.price}}</h3>
+    <a routerLink="/listings/{{ listing.id }}">
+      <h3>{{ listing.name }} - ${{ listing.price }}</h3>
     </a>
+  </div>
+  <div *ngIf="isLoading">
+    <h3>Loading...</h3>
   </div>
 </app-container>

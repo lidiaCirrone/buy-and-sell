@@ -1,15 +1,18 @@
 <app-container>
   <h2>My Listings</h2>
   <div class="content-box" *ngFor="let listing of listings">
-    <h3>{{listing?.name}}</h3>
-    <p>{{listing?.description}}</p>
-    <p class="mb-1">${{listing?.price}}</p>
+    <h3>{{ listing?.name }}</h3>
+    <p>{{ listing?.description }}</p>
+    <p class="mb-1">${{ listing?.price }}</p>
     <div class="buttons-container">
-      <a routerLink="/edit-listing/{{listing.id}}">
+      <a routerLink="/edit-listing/{{ listing.id }}">
         <button>Edit</button>
       </a>
       <button (click)="onDeleteClicked(listing.id)">Delete</button>
     </div>
+  </div>
+  <div *ngIf="isLoading">
+    <h3>Loading...</h3>
   </div>
   <a routerLink="/new-listing" class="mt-1">
     <button>+ New Listing</button>
