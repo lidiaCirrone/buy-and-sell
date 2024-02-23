@@ -17,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { environment } from '../environments/environment';
 import { initializeApp, provideFirebaseApp } from '@angular/fire/app';
 import { getAuth, provideAuth } from '@angular/fire/auth';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { getAuth, provideAuth } from '@angular/fire/auth';
     ContainerComponent,
     ListingDataFormComponent,
     NavbarComponent,
+    FooterComponent,
   ],
   imports: [
     BrowserModule,
