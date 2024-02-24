@@ -36,7 +36,7 @@ const server = Hapi.server({
    routes: {
       cors: {
          origin: ["*"],
-         headers: ["Accept", "Content-Type"],
+         headers: ["Accept", "Content-Type", "Authorization"],
          additionalHeaders: ["X-Requested-With"]
       }
    }
