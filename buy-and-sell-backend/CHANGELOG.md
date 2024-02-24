@@ -9,4 +9,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
-- changed server config to allow for Authorization header
+- changed server config to avoid cors errors for delete method

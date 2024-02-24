@@ -36,7 +36,7 @@ const server = Hapi.server({
    routes: {
       cors: {
          origin: ["*"],
-         headers: ["Accept", "Content-Type", "Authorization"],
+         headers: ["Accept", "Content-Type"],
          additionalHeaders: ["X-Requested-With"]
       }
    }
@@ -68,6 +68,7 @@ const start = async () => {
          const response = reply.response({})
          response.header('Access-Control-Allow-Origin', '*')
          response.header('Access-Control-Allow-Headers', '*')
+         response.header('Access-Control-Allow-Methods', 'GET, POST, OPTIONS, DELETE')
          return response;
       }
    })
